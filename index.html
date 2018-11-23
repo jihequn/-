@@ -40,7 +40,7 @@
             </el-aside>
 
             <el-container>
-                <iframe src="1-1.html" frameborder="0"></iframe>
+                <iframe :src="activesrc" frameborder="0"></iframe>
             </el-container>
         </el-container>
     </div>
@@ -66,7 +66,7 @@
         var app = new Vue({
             el: '#example',
             data: {
-                
+                'activesrc': 'component/1-1.html',
             },
             created: function () {
 
@@ -74,6 +74,7 @@
             methods: {
                 handleSelect:function(key, keyPath) {
                     console.log(key, keyPath);
+                    this.activesrc ='component/'+key+'.html';
                 }
             }
         })
